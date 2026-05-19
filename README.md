@@ -1,4 +1,3 @@
 # proyecto-connect4
 
-
-hola
+# Juan Montes - Nicolas Almonacid
