@@ -1,7 +1,6 @@
-# proyecto-connect4
 # Nicolas Almonacid Muñoz
 
-# Agente Connect-4 — nico
+# Agente Connect-4
 
 Agente para el reto final de Fundamentos de Inteligencia Artificial (2026.1).
 
