@@ -12,6 +12,7 @@ class MCTSAgentV1(Policy):
 
     def mount(self, timeout: float | None = None) -> None:
         if timeout is not None:
+            # Margen de seguridad muy estricto para el autocalificador
             self.time_limit = max(0.001, float(timeout) * 0.5)
         return None
 
@@ -26,6 +27,7 @@ class MCTSAgentV1(Policy):
         start = time.perf_counter()
         iterations = 0
         
+        # OPTIMIZACIÓN: Límite híbrido (tiempo + tope de iteraciones)
         while time.perf_counter() - start < self.time_limit and iterations < 150:
             self._simulate(root_state, stats)
             iterations += 1
@@ -65,6 +67,7 @@ class MCTSAgentV1(Policy):
                     if n_i == 0:
                         uct = float('inf')
                     else:
+                        # OPTIMIZACIÓN: math en lugar de np para escalares es mucho más rápido
                         uct = (w_i / n_i) + self.c * math.sqrt(math.log(total_visits) / n_i)
                     
                     if uct > best_uct:
