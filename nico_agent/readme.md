@@ -1,4 +1,4 @@
-# Agente Connect-4 — nico
+# Agente Connect-4 — Nicolas Almonacid
 
 Agente para el reto final de Fundamentos de Inteligencia Artificial (2026.1).
 
@@ -49,7 +49,7 @@ Hiperparametros configurables:
 
 Duracion estimada: ~3 minutos para 100k episodios en una maquina moderna.
 
-### V1 (para comparacion)
+### V1
 
 ```bash
 python -m nico_agent.train_v1 --episodes 100000
@@ -75,9 +75,9 @@ cd nico_agent
 jupyter notebook entrega.ipynb
 ```
 
-El notebook genera 6 figuras en `data/exp*.png` que se usan en el PDF.
+El notebook genera 2 figuras en `data/exp*.png` que se usan en el PDF.
 
-## Decisiones de diseño (para defender en la sustentación)
+## Decisiones de diseño
 
 **Canonicalización por jugador.** La Q-table indexa por `board * current_player`,
 no por el tablero crudo. Asi mi color siempre es +1 y el del oponente -1,
